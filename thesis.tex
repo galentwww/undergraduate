@@ -1,0 +1,127 @@
+\documentclass[zihao=-4,a4paper]{ctexart}
+%==================== 数学符号公式 ============
+\usepackage{xeCJK}
+\newcommand{\zhongsong}{\CJKfontspec{STZhongsong}}%华文中宋，请自行下载字体并安装
+\usepackage{fontspec}
+\setmainfont{Times New Roman}
+
+\usepackage{amsmath}                 % AMS LaTeX宏包
+\usepackage[ruled]{algorithm2e}              %伪代码
+%\usepackage{amssymb}                % 用来排版漂亮的数学公式
+%\usepackage{amsbsy}
+\usepackage[style=1]{mdframed}
+\usepackage{amsthm}
+\usepackage{amsfonts}
+\usepackage{mathrsfs}                % 英文花体字 体
+\usepackage{bm}                      % 数学公式中的黑斜体
+\usepackage{bbding,manfnt}           % 一些图标，如 \dbend
+\usepackage{lettrine}                % 首字下沉，命令\lettrine
+\usepackage{gbt7714}                 %配置gb7714引用格式
+
+\def\attention{\lettrine[lines=2,lraise=0,nindent=0em]{\large\textdbend\hspace{1mm}}{}}
+\usepackage{longtable}
+\usepackage[toc,page]{appendix}
+\usepackage{geometry}                % 页边距调整
+\geometry{top=2.5cm,bottom=2cm,left=2.5cm,right=2cm}
+%\usepackage{relsize}                % 调整公式字体大小：\mathsmaller,\mathlarger
+%\usepackage{caption2}               % 浮动图形和表格标题样式
+\usepackage{booktabs}                %三线表上下加粗
+\usepackage{diagbox}                 % 分类表头
+%%%使用带圈数字作为教主
+\usepackage{pifont}
+\usepackage[symbol*,stable]{footmisc}
+\DefineFNsymbols{circled}{{\ding{192}}{\ding{193}}{\ding{194}}
+{\ding{195}}{\ding{196}}{\ding{197}}{\ding{198}}{\ding{199}}{\ding{200}}{\ding{201}}}
+\setfnsymbol{circled}               %带圈脚注
+%====================公式按章编号==========================
+\numberwithin{equation}{section}
+\numberwithin{table}{section}
+\numberwithin{figure}{section}
+%================= 基本格式预置 ===========================
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}  
+\fancyhead[C]{\zihao{5}  \songti 武汉理工大学毕业设计（论文）}
+\fancyfoot[C]{~\zihao{5} \thepage~}
+\renewcommand{\headrulewidth}{0.65pt} 
+\ctexset{
+    section = {
+        format = \centering\bfseries\zihao{-2} \heiti,
+        name = {第, 章}
+    },
+    subsection = {
+        nameformat = \bfseries\zihao{3} \heiti
+    },
+    subsubsection = {
+        nameformat = \bfseries\zihao{4} \heiti
+    }
+}
+%================== 图形支持宏包 =========================
+\usepackage{subfigure}
+\usepackage{graphicx}                % 嵌入png图像
+\usepackage{color,xcolor}            % 支持彩色文本、底色、文本框等
+\usepackage{hyperref}                % 交叉引用
+\usepackage{caption}
+\usepackage{multirow}                  %合并表格
+% set up labelformat and labelsep for figure
+\captionsetup{labelsep=quad}
+\captionsetup{figurewithin=section}
+
+\renewcommand{\thesubfigure}{(\arabic{subfigure})} %还可设置图编号显示格式，加括号或者不加括号
+
+%==================== 源码和流程图 =====================
+\usepackage{listings}                % 粘贴源代码
+\usepackage{tikz}                    
+\usepackage{tikz-3dplot}
+\usetikzlibrary{shapes,arrows,positioning}
+%===================   正文开始    ===================
+\begin{document}
+%===================  定理类环境定义 ===================
+\newtheorem{example}{例}              % 整体编号
+%\newtheorem{algorithm}{算法}
+\newtheorem{theorem}{定理}            % 按 section 编号
+\newtheorem{definition}{定义}
+\newtheorem{axiom}{公理}
+\newtheorem{property}{性质}
+\newtheorem{proposition}{命题}
+\newtheorem{lemma}{引理}
+\newtheorem{corollary}{推论}
+\newtheorem{remark}{注解}
+\newtheorem{condition}{条件}
+\newtheorem{conclusion}{结论}
+\newtheorem{assumption}{假设}
+%==================重定义 ===================
+\renewcommand{\contentsname}{目 ~~ 录}     
+\renewcommand{\abstractname}{摘 ~~ 要} 
+\renewcommand{\refname}{参考文献}     
+\renewcommand{\indexname}{索引}
+\renewcommand{\figurename}{图}
+\renewcommand{\tablename}{表}
+\renewcommand{\appendixname}{附录}
+\renewcommand{\proofname}{证明}
+\renewcommand{\algorithmcfname}{算法} 
+%\renewcommand{\algorithm}{算法} 
+%============== 封皮和前言 =================
+\input{body/cover}
+\pagestyle{plain}
+\pagenumbering{Roman}
+\include{body/abstract}
+\pagestyle{empty}
+\tableofcontents 
+\thispagestyle{empty}
+%============== 论文正文   =================
+\pagestyle{fancy}
+\include{body/chapter1}      %
+\include{body/chapter2}
+\include{body/chapter3}
+\include{body/chapter4}
+\include{body/chapter5}
+%============= 参考文献 =====================
+\addcontentsline{toc}{section}{参考文献}
+{\zihao{5} \songti \bibliography{bibfile}}
+\clearpage
+\include{body/appendices}
+%=============  致谢  ======================
+\include{body/acknowledge}
+\end{document}
+%%%%%%%%%% 结束 %%%%%%%%%%
