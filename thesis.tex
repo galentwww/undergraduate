@@ -1,18 +1,19 @@
-%!TEX program = xelatex
-\documentclass[zihao=-4,a4paper]{ctexart}
-%==================== 数学符号公式 ============
+\documentclass[utf8,zihao=-4,a4paper]{ctexart}
+
 \usepackage{xeCJK}
-\newcommand{\zhongsong}{\CJKfontspec{STZhongsong}}%华文中宋，请自行下载字体并安装
+\newcommand{\zhongsong}{\CJKfontspec{STZhongsong}} %华文中宋，请自行下载字体并安装
 \newcommand{\xiaosi}{\fontsize{12pt}{18pt}\selectfont}            % 小四, 1.5倍行距
 \newcommand{\sihao}{\fontsize{14pt}{21pt}\selectfont}            % 四号, 1.5 倍行距
 \newcommand{\xiaosan}{\fontsize{15pt}{22pt}\selectfont}        % 小三, 1.5倍行距
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
 
+
+%==================== 数学符号公式 ============
 \usepackage{amsmath}                 % AMS LaTeX宏包
 \usepackage[ruled]{algorithm2e}              %伪代码
-%\usepackage{amssymb}                % 用来排版漂亮的数学公式
-%\usepackage{amsbsy}
+\usepackage{amssymb}                % 用来排版漂亮的数学公式
+\usepackage{amsbsy}
 \usepackage[style=1]{mdframed}
 \usepackage{amsthm}
 \usepackage{amsfonts}
@@ -31,35 +32,43 @@
 %\usepackage{caption2}               % 浮动图形和表格标题样式
 \usepackage{booktabs}                %三线表上下加粗
 \usepackage{diagbox}                 % 分类表头
-%%%使用带圈数字作为教主
-\usepackage{pifont}
-\usepackage[symbol*,stable]{footmisc}
-\DefineFNsymbols{circled}{{\ding{192}}{\ding{193}}{\ding{194}}
-{\ding{195}}{\ding{196}}{\ding{197}}{\ding{198}}{\ding{199}}{\ding{200}}{\ding{201}}}
-\setfnsymbol{circled}               %带圈脚注
+
+\newlength\szg
+\newcommand\quan[1]{%
+\settoheight\szg{#1}%
+\tikz[baseline]{\pgfmathparse{
+ifthenelse(#1 < 10, 1, ifthenelse(#1 < 100, 0.75, 0.5))
+}
+\let\hfs\pgfmathresult
+\node at (0,\szg/2) {\makebox[0em][c]{\scalebox{\hfs}[1]{#1}}};
+\draw (0,\szg/2) circle (\szg/2+0.35ex);
+}}
+
 %====================公式按章编号==========================
 \numberwithin{equation}{section}
 \numberwithin{table}{section}
 \numberwithin{figure}{section}
 %================= 基本格式预置 ===========================
 \usepackage{fancyhdr}
+
 \pagestyle{fancy}
 \fancyhf{}  
-\fancyhead[C]{\zihao{5}  \songti 沈阳建筑大学本科毕业设计（论文）题目}
-\fancyfoot[C]{~\zihao{5} \thepage~}
+\fancyhead[C]{\zihao{5} 河南旅游中心项目安全施工组织设计 }
+\fancyfoot[C]{~\zihao{5} -\thepage-~}
 \renewcommand{\headrulewidth}{0.65pt} 
 \ctexset{
     section = {
-        format = \bfseries \xiaosan \heiti ,
+        format = \bfseries \zihao{-3} \heiti ,
         name = {, }
     },
     subsection = {
-        nameformat = \bfseries \sihao \heiti
+        nameformat = \bfseries \zihao{-4} \heiti
     },
     subsubsection = {
-        nameformat = \bfseries \xiaosi \heiti
+        nameformat = \bfseries \zihao{-4} \heiti
     }
 }
+
 %================== 图形支持宏包 =========================
 \usepackage{subfigure}
 \usepackage{graphicx}                % 嵌入png图像
