@@ -3,6 +3,9 @@
 %==================== 数学符号公式 ============
 \usepackage{xeCJK}
 \newcommand{\zhongsong}{\CJKfontspec{STZhongsong}}%华文中宋，请自行下载字体并安装
+\newcommand{\xiaosi}{\fontsize{12pt}{18pt}\selectfont}            % 小四, 1.5倍行距
+\newcommand{\sihao}{\fontsize{14pt}{21pt}\selectfont}            % 四号, 1.5 倍行距
+\newcommand{\xiaosan}{\fontsize{15pt}{22pt}\selectfont}        % 小三, 1.5倍行距
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
 
@@ -47,14 +50,14 @@
 \renewcommand{\headrulewidth}{0.65pt} 
 \ctexset{
     section = {
-        format = \bfseries\zihao{-3} \heiti,
+        format = \bfseries \xiaosan \heiti ,
         name = {, }
     },
     subsection = {
-        nameformat = \bfseries\zihao{4} \heiti
+        nameformat = \bfseries \sihao \heiti
     },
     subsubsection = {
-        nameformat = \bfseries\zihao{-4} \heiti
+        nameformat = \bfseries \xiaosi \heiti
     }
 }
 %================== 图形支持宏包 =========================
@@ -116,6 +119,8 @@
 \include{body/chapter3}
 %\include{body/chapter4}
 %\include{body/chapter5}
+%=============  结论  ======================
+\include{body/conclusion}
 %============= 参考文献 =====================
 \addcontentsline{toc}{section}{参考文献}
 {\zihao{5} \songti \bibliography{bibfile}}
