@@ -5,6 +5,7 @@
 \newcommand{\xiaosi}{\fontsize{12pt}{18pt}\selectfont}            % 小四, 1.5倍行距
 \newcommand{\sihao}{\fontsize{14pt}{21pt}\selectfont}            % 四号, 1.5 倍行距
 \newcommand{\xiaosan}{\fontsize{15pt}{22pt}\selectfont}        % 小三, 1.5倍行距
+\newcommand{\xingkai}{\CJKfontspec{STXingkai}}
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
 
@@ -120,7 +121,7 @@ ifthenelse(#1 < 10, 1, ifthenelse(#1 < 100, 0.75, 0.5))
 \pagenumbering{Roman}
 \include{body/abstract}
 \tableofcontents 
-
+\include{body/intro}
 %============== 论文正文   =================
 \pagestyle{fancy}
 \include{body/chapter1}
