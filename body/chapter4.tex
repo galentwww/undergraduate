@@ -226,7 +226,8 @@ $f$ 为钢材的抗压强度设计值，根据规范取值；
 按照组合风荷载计算，立杆的轴向设计值应该为：
 
 \begin{align}
-    N=1.2(N_{G1k+G2k})+0.85\times 1.4\sum N_{Qk}
+    \label{fx:Nzhou}
+    N=1.2(N_{G1k+G2k})+0.9\times 1.4\sum N_{Qk}
 \end{align}
 
 式中：
@@ -269,6 +270,7 @@ $$\frac{10150}{0.265×5.06×10^2}+\frac{210000}{5.26×10^3}=115.6 N\cdot mm \leq
 稳定性应满足：
 
 \begin{align}
+    \label{fx:stb}    
     \frac{N_l}{\phi A}\leq 0.85f
 \end{align}
 
@@ -282,15 +284,102 @@ $A_c$ 为连墙件的净截面面积；
 
 $N_l$ 为连墙件轴向力设计值；   
 
-$N_{lw}$ 为风荷载产生的连墙件轴向力设计值；
+$N_{lw}$ 为风荷载产生的连墙件轴向力设计值，按照公式 $N_{lw}=1.4\cdot w_k\cdot A_w$ 计算；
 
 $N_0$ 为连墙件约束脚手架平面外变形所产生的轴向力，双排架取 $3.0kN$。
 
-可得 
+计算连墙件强度： 
 
 $$\sigma=\frac{1.4×0.5×6×1.5×1.5+3}{506}=24.6 N/mm^2<0.85f=174 N/mm^2$$
 
+故强度满足设计要求。
+
+计算连墙件稳定性：
+
+构件长细比为 $\lambda =l_0/I=150/1.59=9.43$，查表可得 $\phi=0.976$
+
+根据公式 \ref{fx:stb} ，代入数据：
+
+$$\sigma =\frac{12450}{0.976\times 1912}=6.67 N/mm^2<0.85f=174 N/mm^2$$
+
+故稳定性满足设计要求。\\
+
 (6) 地基承载力计算\\
+
+立杆基础底面平均压力应满足下式：
+
+\begin{align}
+    p_k=\frac{N_k}{A} \leq f_g
+\end{align}
+
+\begin{align}
+    f_c=k_c\times f_{g}
+\end{align}
+
+式中：
+
+$p_k$ 为立杆基础底面处的平均压力标准值；   
+
+$N_k$ 为上部结构传至立杆基础顶面的轴向力标准值； 
+
+$A$ 为基础地面面积；                       
+
+$f_g$ 为地基承载力特征值（kPa）；$k_c$ 取 0.4。
+
+可得 $N_{G1k}=H\times G_k=18.0\times 0.1444=2.59kN$、$N_{G2k}=1.41kN$、$N_{Qk}=4.54kN$;
+按照公式 \ref{fx:Nzhou} 可得
+
+$N=1.2\times (2.59+1.41)+1.4\times 4.54=9.9kN $
+
+$Pk=9.9/(0.5×0.5)=39.6kN/m^2\leq f_g/0.4=99.4kN/m^2$
+
+故地基承载力满足设计要求。\\
+
+（7）最大允许搭设高度计算\\
+
+双排脚手架的可搭设高度 $[H]$ 应按照下列公式计算，并取最小值：
+
+不组合风荷载时：
+
+\begin{align}
+    \label{fx:bzh} 
+    [H]=\frac{\phi Af-(1.2N_{G2k}+1.4\sum N_{Qk})}{1.2g_k}
+\end{align}
+
+组合风荷载时：
+
+\begin{align}
+    \label{fx:zh} 
+    [H]=\frac{\phi Af-[1.2N_{G2k}+0.9\times 1.4(\sum N_{Qk}+\frac{M_{wk}}{W}\phi A)]}{1.2g_k}
+\end{align}
+
+式中：
+
+$[H]$ 为脚手架最大允许搭设高度；
+
+$g_k$ 为立杆承受的每米结构自重标准值，查规范可得 $g_k=0.1444kN/m$;
+
+$A$ 为脚手架钢管截面面积； 
+
+$f$ 为钢材强度设计值； 
+
+$W$ 为截面模量。\\
+
+当不组合风荷载时，将数据带入公式 \ref{fx:bzh} 得：
+
+\begin{align*}
+    [H] &=\frac{0.265\times 5.06\times10^{-4}\times 2.05\times 10^5-(1.2\times 1.41+1.4\times 4.5)}{1.2\times 0.1444}\\
+    &=109.1m
+\end{align*}
+
+当组合风荷载时，将数据带入公式 \ref{fx:zh} 得：
+
+\begin{align*}
+[H] &=\frac{0.265\times 5.06\times10^{-4}\times 2.05\times10^5-[1.2\times 1.41+0.9\times 1.4\times(6.18+\frac{0.22\times 0.265\times 5.06\times 10^{-4}}{5.26\times 10^{-6}})]}{1.2\times 0.1444}\\
+&=85m
+\end{align*}
+
+取最大允许搭设高度 50m，18.0m 符合要求。
 
 \subsection{脚手架质量验收}
 
