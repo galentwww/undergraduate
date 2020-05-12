@@ -59,33 +59,23 @@
 
 小横杆的自重标准值：
 
-\begin{align}
-    p_1=0.0397 \times 1=0.0397 kN/m
-\end{align}
+$$p_1=0.0397 \times 1=0.0397 kN/m$$
 
 脚手板的自重标准值:
 
-\begin{align}
-    p_2=\frac{0.35 \times 1.5}{2+1}=0.175 kN/m
-\end{align}
+$$p_2=\frac{0.35 \times 1.5}{2+1}=0.175 kN/m$$
 
 施工荷载自重标准值:
 
-\begin{align}
-    Q=\frac{3 \times 1.5}{2+1}=1.5 kN/m
-\end{align}
+$$Q=\frac{3 \times 1.5}{2+1}=1.5 kN/m$$
 
 恒荷载做控制荷载设计值：
 
-\begin{align}
-    q_1=1.35\times(0.0397+0.175)+1.4\times 0.7\times 1.5=1.759 kN/m
-\end{align}
+$$q_1=1.35\times(0.0397+0.175)+1.4\times 0.7\times 1.5=1.759 kN/m$$
 
 活荷载做控制荷载设计值：
 
-\begin{align}
-    q_2=1.2\times(0.0397+0.175)+1.4\times 1.5=2.396 kN/m
-\end{align}
+$$q_2=1.2\times(0.0397+0.175)+1.4\times 1.5=2.396 kN/m$$
 
 \quan{2} 强度验算\\
 
@@ -128,33 +118,23 @@
 
 小横杆的自重标准值：
 
-\begin{align}
-    p_1=0.0397 \times 1.05=0.042 kN/m
-\end{align}
+$$p_1=0.0397 \times 1.05=0.042 kN/m$$
 
 脚手板的自重标准值:
 
-\begin{align}
-    p_2=\frac{0.35 \times 1.5\times 1.05}{2+1}=0.184 kN/m
-\end{align}
+$$p_2=\frac{0.35 \times 1.5\times 1.05}{2+1}=0.184 kN/m$$
 
 施工荷载自重标准值:
 
-\begin{align}
-    Q=\frac{3 \times 1.5\times 1.05}{2+1}=1.575 kN/m
-\end{align}
+$$Q=\frac{3 \times 1.5\times 1.05}{2+1}=1.575 kN/m$$
 
 恒荷载做控制荷载设计值：
 
-\begin{align}
-    q_1=\frac{[1.35\times(0.042+0.184)+1.4\times 0.7\times 1.575]}{2}=0.96 kN/M
-\end{align}
+$$q_1=\frac{[1.35\times(0.042+0.184)+1.4\times 0.7\times 1.575]}{2}=0.96 kN/M$$
 
 活荷载做控制荷载设计值：
 
-\begin{align}
-    q_2=\frac{[1.2\times(0.042+0.184)+1.4\times 1.575]}{2}=1.27 kN/M
-\end{align}
+$$q_2=\frac{[1.2\times(0.042+0.184)+1.4\times 1.575]}{2}=1.27 kN/M$$
 
 \quan{2} 强度验算\\
 
@@ -178,9 +158,7 @@
 
 带入数值得
 
-\begin{align}
-    V_{max}=\frac{0.99\times 0.397\times 1500^4+2.76\times (0.042+0.184)\times 1500^3/2}{100\times 2.06\times 10^5\times 121870}=0.792
-\end{align}
+$$V_{max}=\frac{0.99\times 0.397\times 1500^4+2.76\times (0.042+0.184)\times 1500^3/2}{100\times 2.06\times 10^5\times 121870}=0.792$$
 
 大横杆的最大挠度 $0.792mm$ 小于 $1050.0/150=7.000$ 与 $10mm$，故挠度满足要求！ \\
 
@@ -204,9 +182,8 @@
 \quan{4} 活荷载自重标准值平均分配到两侧立杆：$Q=3×1.05×1.5/2=2.36kN$
 
 根据公式 \ref{fx:rc} ,荷载设计值:
-\begin{align}
-R=1.2×(0.059+0.02+0.27)+1.4×2.36=3.72kN<R_c=8.0kN
-\end{align}
+
+$$R=1.2×(0.059+0.02+0.27)+1.4×2.36=3.72kN<R_c=8.0kN$$
 
 故单扣件抗滑移能力可以满足要求。\\
 
@@ -277,13 +254,41 @@ $N=1.2\times (2.59+1.41)+0.85\times 1.4\times 4.5=10.15 kN$
 
 可得立杆稳定性的设计值为
 
-\begin{align}
-    \frac{10150}{0.265×5.06×10^2}+\frac{210000}{5.26×10^3}=115.6 N\cdot mm \leq f=205 N\cdot mm
-\end{align}
+$$\frac{10150}{0.265×5.06×10^2}+\frac{210000}{5.26×10^3}=115.6 N\cdot mm \leq f=205 N\cdot mm$$
 
 故立杆的稳定性满足要求。\\
 
 (5) 连墙件计算\\
+
+连墙件杆件的强度应满足：
+
+\begin{align}
+    \sigma =\frac{N_l}{A_c}\leq 0.85f
+\end{align}
+
+稳定性应满足：
+
+\begin{align}
+    \frac{N_l}{\phi A}\leq 0.85f
+\end{align}
+
+\begin{align}
+    N_l=N_{lw}+N_0
+\end{align}
+
+式中：
+
+$A_c$ 为连墙件的净截面面积；  
+
+$N_l$ 为连墙件轴向力设计值；   
+
+$N_{lw}$ 为风荷载产生的连墙件轴向力设计值；
+
+$N_0$ 为连墙件约束脚手架平面外变形所产生的轴向力，双排架取 $3.0kN$。
+
+可得 
+
+$$\sigma=\frac{1.4×0.5×6×1.5×1.5+3}{506}=24.6 N/mm^2<0.85f=174 N/mm^2$$
 
 (6) 地基承载力计算\\
 
