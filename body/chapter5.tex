@@ -564,8 +564,7 @@ $q_1$ 取二者最大值，即 $3.44 kN/m$，$q_2=0.9\times 0.15\times (0.5+16.8
 
 梁底模主楞采用 40x80mm 木方，间距 500mm，支撑在主楞上间距 300mm，由于木楞的自重对结构的影响较小，故计算时忽略木楞自重，梁底主楞按照单跨简支梁计算，由活荷载做控制
 
-\begin{align*}
-    P_1&=\frac{3550\times 0.3}{2}=0.53 kN\\
+\begin{align*}    P_1&=\frac{3550\times 0.3}{2}=0.53 kN\\
     P_2&=\frac{2300\times 0.3}{2}=0.34 kN
 \end{align*}
 
@@ -609,7 +608,187 @@ $q_1$ 取二者最大值，即 $3.44 kN/m$，$q_2=0.9\times 0.15\times (0.5+16.8
 
 (3) 对柱的安全性验算\\
 
+\quan{1} 柱箍间距计算
 
+柱选取首层截面尺寸最大的柱进行计算，截面尺寸为 500×500mm，计算高度 9.0m， 模板采用 18mm 厚木模板，竖楞采用 40×80mm 木方，间距 100mm，用柱箍固定，柱箍处用 M18 螺栓加固。
+
+当柱模板为木面板时柱箍间距应按照如下公式计算：
+
+\begin{align}
+    \label{fx:5.B}
+    L \leq 0.783\sqrt[3]{\frac{EI}{Fb}}
+\end{align}
+
+式中 $L$ 为柱箍间距，$E$ 为面板的弹性模量，取 10000，$b$ 为面板宽度，为 500mm，根据公式 \ref{fx:5.4} 可求出 $I$ ,
+根据公式 \ref{fx:5.7} 可以求出式中的 $F$：
+
+\begin{align*}
+I&=\frac{500\times 18^3}{12}=243000\\
+F&=0.22\times 24\times 5.71\times 1\times 1\times 2^{\frac{1}{2}}=42600 N/mm^2
+\end{align*}
+
+将上述所有数值代回公式 \ref{fx:5.B} 可得出柱箍间距 $L$ 为
+
+\[L \leq 0.783\times \sqrt[3]{\frac{10000\times 243000}{4260000\times 10^{-6}\times 500}}=399mm\]
+
+此外，柱箍间距还应满足
+
+\begin{align}
+    \label{fx:5.C}
+    L \leq \sqrt{\frac{8Wf_m}{F_sb}}=\sqrt{\frac{8\times 27000\times 35}{42600\times 10^{-6}\times 500}}=595 mm
+\end{align}
+
+比较这两个结果，二者取最小值，即柱箍间距 $L=400mm$。
+
+\quan{2} 柱模板安全验算
+
+墙体模板受力可以简化为三跨梁连续梁，根据公式 \ref{fx:5.7} 和 \ref{fx:5.7a} 可以求出新教混凝土作用于模板上的侧压力设计值 $G_{4k}$
+
+\begin{align*}
+    F_1&=0.22\times 24\times 5.71\times 1\times 1\times 2^{\frac{1}{2}}=42600 N/mm^2\\
+    F_2&=\times 9000=216 kN/m^2
+\end{align*}
+
+二者取较小值，则新教混凝土作用于模板上的侧压力设计值 $G_{4k}=42.6 kN/m^2$，按照规范取钢筋自重标准值 $G_{3k}=2kN/m^2$
+
+当活荷载做控制时
+
+\[q_1=0.9\times 0.5\times (1.2\times 42.6+1.4\times 2)=22.7kN \cdot m\]
+
+当恒荷载做控制时
+
+\[q_1^{'}=0.9\times 0.5\times (1.35\times 42.6+1.4\times 0.7\times 2)=26.7kN \cdot m\]
+
+$q_1$ 取二者最大值，即 $26.7 kN/m$，$q_2=0.9\times 42.6=38.34 kN/m$
+
+分别按照公式 \ref{fx:5.0}、\ref{fx:5.2} 计算得出最大弯矩值与截面模量：
+
+\begin{align*}
+    M&=0.1\times 26.7\times 100^2=26700 N \cdot mm\\
+    W&=100\times 18^2 /6=54000 mm^2
+\end{align*}
+
+随后按照公式 \ref{fx:5.1} 求出柱模板的强度：
+
+\[
+    \sigma = \frac{54000}{26700}=2.02 N/mm^2< f=17N/mm^2
+\]
+
+故柱模板的强度满足要求。\\
+
+对柱模板做挠度验算，根据公式 \ref{fx:5.4} 算出柱模板的最大截面惯性矩 $I$
+
+\[
+    I=500\times 18^3 /12=243000 mm^4
+\]
+
+再将结果代回公式 \ref{fx:5.3}，便可求出柱模板的挠度设计值：
+
+\begin{align*}
+    V&=\frac{0.99\times 38.3 \times 100^4}{100\times 10000\times 486000}\\
+    &=0.15 mm<[v]=1/400=1.25mm
+\end{align*}
+
+故柱模板的挠度也满足要求。\\
+
+\quan{3} 柱竖楞验算
+
+柱竖楞的荷载按三跨连续梁计算受力，
+
+\begin{align*}
+    q_1&=0.9\times 0.1\times(1.35\times 42.6+1.4\times 0.7\times 2)=5.4 kN/m\\
+    q_2&=0.9\times 0.1\times 42.6=3.83 kN/m
+\end{align*}
+
+分别按照公式 \ref{fx:5.0}、\ref{fx:5.2} 计算得出最大弯矩值与截面模量：
+
+\begin{align*}
+    M&=0.1\times 5400\times 500^2=86000 N \cdot mm\\
+    W&=40\times 80^2 /6=42667 mm^2
+\end{align*}
+
+随后按照公式 \ref{fx:5.1} 求出柱竖楞的强度：
+
+\[
+    \sigma = \frac{86000}{42667}=2.02 N/mm^2< f=17N/mm^2
+\]
+
+故柱竖楞的强度满足要求。\\
+
+对柱竖楞做挠度验算，根据公式 \ref{fx:5.4} 算出柱竖楞的最大截面惯性矩 $I$
+
+\[
+    I=40\times 80^3 /12=1706666 mm^4
+\]
+
+再将结果代回公式 \ref{fx:5.3}，便可求出柱竖楞的挠度设计值：
+
+\begin{align*}
+    V&=\frac{0.99\times 3.83 \times 400^4}{100\times 10000\times 1706666}\\
+    &=0.56 mm<[v]=1/400=1.25mm
+\end{align*}
+
+故柱竖楞的挠度也满足要求。\\
+
+\quan{4} 柱箍验算
+
+柱箍采用 40x80mm 的木材质，按照简支梁计算，使用公式 \ref{fx:5.D} 求得柱箍强度：
+
+\begin{align}
+    \label{fx:5.D}
+    \frac{N}{A_n}+\frac{M_x}{W_nx}\leq f \ \text{或} \ (f_m)
+\end{align}
+
+其中
+
+\begin{align}
+\label{fx:5.E}
+N&=\frac{1}{2}ql_3\\
+&=0.5\times 17040\times 05=4040 N \notag\\
+\label{fx:5.F}
+q&=F_sl_1\\
+&=42600\times 0.4=17040 N/mm \notag\\
+\label{fx:5.G}
+M_x&=\frac{ql_2^2}{8}=\frac{F_sl_1L_2^2}{8}\\
+&=\frac{17040\times (500+15\times 2)}{8}=598317 N \cdot mm \notag
+\end{align}
+
+在公式 \ref{fx:5.D} 中的柱箍截面面积 $A_n=40\times 80=3200 mm^2$;柱箍界面抵抗矩 $W_{nx}=80^2\times 40/6=42666 mm^3$
+将上述数据代回公式 \ref{fx:5.D} 中得
+
+\begin{align*}
+    \frac{N}{A_n}+\frac{M_x}{W_nx}=\frac{4040}{3200}+\frac{598317}{42666}=15.28 N/mm^2
+\end{align*}
+
+查表得 $f_m=17N/mm^2$,$15.28<17N/mm^2$ 故强度满足要求。
+
+对柱箍做挠度验算，$q_2=\times 0.9\times 42.6\times 0.4=15.3 N/mm^2$，
+根据公式 \ref{fx:5.4} 算出柱箍的最大截面惯性矩 $I$
+
+\[
+    I=40\times 80^3 /12=1706666 mm^4
+\]
+
+再按照简支梁计算公式将结果代回
+
+\begin{align*}
+    V_{max}&=\frac{5q_2l^3}{384EI}\\
+    &=\frac{5\times 15.3\times (500+15\times 2)^3}{384\times 10000\times 170666}\\
+    &=0.92mm<[v]=1/400=1.225mm
+\end{align*}
+
+便可求出柱箍的挠度也满足要求。\\
+
+\quan{5} 螺栓验算
+
+螺栓采用 M18，竖向间距 400mm。根据公式 \ref{fx:5.9} 、\ref{fx:5.9b} 可得
+
+\begin{align*}
+    F_s&=0.95\times(1.2\times 42.6+1.4\times 2)=51.2 kN/m^2
+    N&=0.5\times 0.3\times 51.2=7.68 kN
+\end{align*}
+
+查表得 M18 螺栓的 $N^b_t$ 值为 $29.6 kN>7.68 kN$，故螺栓满足设计要求。
 
 \subsection{模板安装及拆除}
 \subsubsection{模板安装}
