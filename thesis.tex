@@ -84,6 +84,7 @@ ifthenelse(#1 < 10, 1, ifthenelse(#1 < 100, 0.75, 0.5))
 
 \renewcommand{\thesubfigure}{(\arabic{subfigure})} %还可设置图编号显示格式，加括号或者不加括号
 
+
 %==================== 源码和流程图 =====================
 \usepackage{listings}                % 粘贴源代码
 \usepackage{tikz}                    
@@ -121,7 +122,9 @@ ifthenelse(#1 < 10, 1, ifthenelse(#1 < 100, 0.75, 0.5))
 \pagestyle{plain}
 \pagenumbering{Roman}
 \include{body/abstract}
+\begin{center}
 \tableofcontents 
+\end{center}
 \include{body/intro}
 %============== 论文正文   =================
 \pagestyle{fancy}
