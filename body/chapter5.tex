@@ -89,7 +89,15 @@ $q$ 取较大值，故 $q=6942 N/m$
 
 弯矩取最大值计算，故 $M=0.23kN\cdot m$\\
 
-对板做强度验算，按照三跨连续梁计算，
+对板做强度验算，按照三跨连续梁计算，计算简图如下：
+
+\begin{figure}[thbp!]
+    \centering
+    \includegraphics[width=1.0\linewidth]{figure/c5f1.png}
+    \caption{楼板模板受力简图}
+    \label{fig:c5f1}
+\end{figure}
+
 
 \begin{align}
     \label{fx:5.1}
@@ -139,7 +147,17 @@ $E$ 为模板的弹性模量，取 $E=10000 N/mm^2$；$I$ 为截面惯性矩，�
 
 \quan{2} 板的次楞验算\\
 
-板次楞采用 40×80mm 木方，间距 300mm，主楞间距 500mm。次楞的荷载按三跨连续梁计算受力，对板的次楞做强度验算：
+板次楞采用 40×80mm 木方，间距 300mm，主楞间距 500mm。次楞的荷载按三跨连续梁计算受力，受理简图如下：
+
+\begin{figure}[thbp!]
+    \centering
+    \includegraphics[width=1.0\linewidth]{figure/c5f2.png}
+    \caption{板次楞受力简图}
+    \label{fig:c5f2a}
+\end{figure}
+
+
+对板的次楞做强度验算：
 
 \begin{align*}
     q_1&=0.9\times [1.2(500+2880+132)+1.4\times 2500]\times 0.3=1972 N/m \\
@@ -298,6 +316,13 @@ $l_0$ 取二者最大值，即 $l_0=3.468 m$，随后根据公式 $\lambda=l_0/i
 梁模板计算取首层截面尺寸最大的梁进行计算，截面尺寸为 300×700mm，模板采用 18mm
 厚木模板，次楞间距 200mm。
 
+\begin{figure}[thbp!]
+    \centering
+    \includegraphics[width=1.0\linewidth]{figure/c5f3.png}
+    \caption{梁侧模受力简图}
+    \label{fig:c5f3}
+\end{figure}
+
 新浇混凝土作用于模板的侧压力，可以使用下列公式做计算：
 
 \begin{align}
@@ -388,7 +413,17 @@ $H$ 混凝土侧压力计算位置至新浇筑混凝土顶面总高度为 700mm�
 
 \quan{2} 梁侧模次楞验算\\
 
-梁侧次楞采用 40×80mm 木方，间距 200mm，主楞间距 500mm。木楞自重影响较小，计算时忽略不计，次楞的荷载按三跨连续梁计算受力，对板的次楞做强度验算：
+梁侧次楞采用 40×80mm 木方，间距 200mm，主楞间距 500mm。木楞自重影响较小，计算时忽略不计，次楞的荷载按三跨连续梁计算受力，梁侧模次楞
+受理简图如下：
+
+\begin{figure}[thbp!]
+    \centering
+    \includegraphics[width=1.0\linewidth]{figure/c5f2.png}
+    \caption{梁侧模次楞受力简图}
+    \label{fig:c5f2b}
+\end{figure}
+
+对板的次楞做强度验算：
 
 \begin{align*}
     q_1&=0.9\times 0.2\times [1.35\times 1.68+1.4\times0.7\times 2]=4.43 kN/m \\
@@ -462,7 +497,16 @@ F_s=0.95\times(1.35\times 16.8+1.4\times 2.0)=24.21 kN/m^2
 
 \quan{4} 梁底模验算\\
 
-取 300 宽板计算，梁底设置 3 个 40×80 次楞，间距 150mm，按照三跨连续板计算，根据《建筑结构荷载规范》（GB50009-2012），
+取 300 宽板计算，梁底设置 3 个 40×80 次楞，间距 150mm，受力简图如下：
+
+\begin{figure}[thbp!]
+    \centering
+    \includegraphics[width=0.7\linewidth]{figure/c5f4.png}
+    \caption{梁底模板受力简图}
+    \label{fig:c5f4}
+\end{figure}
+
+按照三跨连续板计算，根据《建筑结构荷载规范》（GB50009-2012），
 查得相关构件的标准荷载值如下：
 
 模板自重标准值取 $0.5 kN/m^2$
@@ -520,7 +564,17 @@ $q_1$ 取二者最大值，即 $7.2 kN/m$，$q_2=0.9\times 0.3\times (0.5+16.8+1
 
 \quan{5} 梁底模次楞验算\\
 
-梁底模次楞采用 40×80mm 木方，间距 150mm，主楞间距 500mm。木楞自重影响较小，计算时忽略不计，次楞的荷载按三跨连续梁计算受力，当荷载由活荷载控制时：
+梁底模次楞采用 40×80mm 木方，间距 150mm，主楞间距 500mm。木楞自重影响较小，计算时忽略不计，次楞的荷载按三跨连续梁计算受力，
+受理简图如下：
+
+\begin{figure}[thbp!]
+    \centering
+    \includegraphics[width=1.0\linewidth]{figure/c5f2.png}
+    \caption{梁底模次楞受力简图}
+    \label{fig:c5f2c}
+\end{figure}
+
+当荷载由活荷载控制时：
 
 \[q_1=0.9\times 0.15\times [1.2\times (0.5+16.8+0.15)+1.4\times 2]=3.20 kN/m\]
 
@@ -562,7 +616,15 @@ $q_1$ 取二者最大值，即 $3.44 kN/m$，$q_2=0.9\times 0.15\times (0.5+16.8
 
 \quan{6} 梁底模主楞验算\\
 
-梁底模主楞采用 40x80mm 木方，间距 500mm，支撑在主楞上间距 300mm，由于木楞的自重对结构的影响较小，故计算时忽略木楞自重，梁底主楞按照单跨简支梁计算，由活荷载做控制
+梁底模主楞采用 40x80mm 木方，间距 500mm，支撑在主楞上间距 300mm，由于木楞的自重对结构的影响较小，
+故计算时忽略木楞自重，梁底主楞按照单跨简支梁计算，由活荷载做控制，受力简图如下：
+
+\begin{figure}[thbp!]
+    \centering
+    \includegraphics[width=0.5\linewidth]{figure/c5f5.png}
+    \caption{梁底模主楞受力简图}
+    \label{fig:c5f5}
+\end{figure}
 
 \begin{align*}    P_1&=\frac{3550\times 0.3}{2}=0.53 kN\\
     P_2&=\frac{2300\times 0.3}{2}=0.34 kN
@@ -610,7 +672,8 @@ $q_1$ 取二者最大值，即 $3.44 kN/m$，$q_2=0.9\times 0.15\times (0.5+16.8
 
 \quan{1} 柱箍间距计算
 
-柱选取首层截面尺寸最大的柱进行计算，截面尺寸为 500×500mm，计算高度 9.0m， 模板采用 18mm 厚木模板，竖楞采用 40×80mm 木方，间距 100mm，用柱箍固定，柱箍处用 M18 螺栓加固。
+柱选取首层截面尺寸最大的柱进行计算，截面尺寸为 500×500mm，计算高度 9.0m， 模板采用 18mm 厚木模板，竖楞采用 40×80mm 木方，
+间距 100mm，用柱箍固定，柱箍处用 M18 螺栓加固。受力简化为三跨简支梁，简图如下：
 
 当柱模板为木面板时柱箍间距应按照如下公式计算：
 
@@ -642,7 +705,16 @@ F&=0.22\times 24\times 5.71\times 1\times 1\times 2^{\frac{1}{2}}=42600 N/mm^2
 
 \quan{2} 柱模板安全验算
 
-墙体模板受力可以简化为三跨梁连续梁，根据公式 \ref{fx:5.7} 和 \ref{fx:5.7a} 可以求出新教混凝土作用于模板上的侧压力设计值 $G_{4k}$
+墙体模板受力可以简化为三跨梁连续梁，受力简图如下：
+
+\begin{figure}[thbp!]
+    \centering
+    \includegraphics[width=1.0\linewidth]{figure/c5f6.png}
+    \caption{墙体模板受力简图}
+    \label{fig:c5f6}
+\end{figure}
+
+根据公式 \ref{fx:5.7} 和 \ref{fx:5.7a} 可以求出新教混凝土作用于模板上的侧压力设计值 $G_{4k}$
 
 \begin{align*}
     F_1&=0.22\times 24\times 5.71\times 1\times 1\times 2^{\frac{1}{2}}=42600 N/mm^2\\
@@ -693,7 +765,14 @@ $q_1$ 取二者最大值，即 $26.7 kN/m$，$q_2=0.9\times 42.6=38.34 kN/m$
 
 \quan{3} 柱竖楞验算
 
-柱竖楞的荷载按三跨连续梁计算受力，
+柱竖楞的荷载按三跨连续梁计算受力，计算简图如下：
+
+\begin{figure}[thbp!]
+    \centering
+    \includegraphics[width=1.0\linewidth]{figure/c5f7.png}
+    \caption{柱竖楞受力简图}
+    \label{fig:c5f7}
+\end{figure}
 
 \begin{align*}
     q_1&=0.9\times 0.1\times(1.35\times 42.6+1.4\times 0.7\times 2)=5.4 kN/m\\
