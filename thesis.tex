@@ -10,6 +10,13 @@
 \usepackage{fontspec}
 \setmainfont{Times New Roman}
 
+%==================== 去掉倒霉的红框框 ============
+
+\usepackage{hyperref}
+\hypersetup{
+colorlinks=true,
+linkcolor=black
+}
 
 %==================== 数学符号公式 ============
 \usepackage{amsmath}                 % AMS LaTeX宏包
@@ -56,7 +63,7 @@ ifthenelse(#1 < 10, 1, ifthenelse(#1 < 100, 0.75, 0.5))
 
 \pagestyle{fancy}
 \fancyhf{}  
-\fancyhead[C]{\zihao{5} 河南旅游中心项目安全施工组织设计 }
+\fancyhead[C]{\zihao{5} “河南旅游中心项目"安全施工组织设计 }
 \fancyfoot[C]{~\zihao{5} -\thepage-~}
 \renewcommand{\headrulewidth}{0.65pt} 
 \ctexset{
@@ -76,7 +83,6 @@ ifthenelse(#1 < 10, 1, ifthenelse(#1 < 100, 0.75, 0.5))
 \usepackage{subfigure}
 \usepackage{graphicx}                % 嵌入png图像
 \usepackage{color,xcolor}            % 支持彩色文本、底色、文本框等
-\usepackage{hyperref}                % 交叉引用
 \usepackage{caption}
 \usepackage{multirow}                  %合并表格
 % set up labelformat and labelsep for figure
