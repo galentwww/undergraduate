@@ -1,6 +1,41 @@
 {
-    "latex-workshop.view.pdf.external.viewer.command": "C:/Program Files/SumatraPDF/SumatraPDF.exe",
-    "latex-workshop.view.pdf.external.viewer.args": [
-        "%PDF%"
-    ]
-}
+       "latex-workshop.latex.recipes": [   
+     {
+           "name": "xelatex",
+           "tools": [
+             "xelatex"
+           ]
+         }
+     ],
+     "latex-workshop.latex.tools": [
+       {
+         "name": "xelatex",
+         "command": "xelatex",
+         "args": [
+             "-synctex=1",
+             "-interaction=nonstopmode",
+             "-file-line-error",
+             "%DOC%"
+         ]
+     },  
+       {
+           "name": "bibtex",
+           "command": "bibtex",
+           "args": [
+               "%DOCFILE%"
+           ]
+       },
+       {
+           "name": "texify",
+           "command": "texify",
+           "args": [
+             "--synctex",
+             "--pdf",
+             "--tex-option=\"-interaction=nonstopmode\"",
+             "--tex-option=\"-file-line-error\"",
+             "%DOC%.tex"
+           ]
+         }
+     ],
+     "latex-workshop.view.pdf.viewer": "external"
+   }
